@@ -2,10 +2,10 @@
 export default function (sel, data, children, text, elm) {
     return {
       sel,
-      data,
-      children,
-      text,
-      elm,
+      data, // // 属性样式等
+      children, // 子元素
+      text, // 文本
+      elm, // 该元素对应的真正的DOM节点，undefined表示它还没有上树
     };
   }
   

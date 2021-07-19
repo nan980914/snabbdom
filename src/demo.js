@@ -17,19 +17,44 @@ const patch = init([
 // 得到container
 const container = document.getElementById("container");
 
-// 创建虚拟节点
-const myVnode = h('a',{props:{href:'http://baidu.com'}},['百度',h('span','haha')])
 
-const myVode2 = h('ul',[
-  'lalal',
-  h('li','苹果'),
-  h('li','西瓜'),
-  h('li','螃蟹🦀')
+const vnode1 = h('ul',{},[
+  "heihei",
+  h('li',{key:'a'},'a'),
+  h('li',{key:'b'},'b'),
+  h('li',{key:'c'},'c'),
+  h('li',{key:'d'},'d')
 ])
 
-// console.log(myVnode)
+console.log(vnode1)
 
-patch(container,myVode2)
+patch(container,vnode1)
+
+// const vnode2 = h('ul',{},[
+//   h('li',{key:'a'},'a'),
+//   h('li',{key:'b'},'bb'),
+//   h('li',{key:'c'},'c'),
+//   h('li',{key:'d'},'d')
+// ])
+// let btn = document.getElementById("btn")
+// btn.onclick = function() {
+//   patch(vnode1,vnode2)
+// }
+
+
+// 创建虚拟节点
+// const myVnode = h('a',{props:{href:'http://baidu.com'}},['百度',h('span','haha')])
+
+// const myVode2 = h('ul',[
+//   'lalal',
+//   h('li','苹果'),
+//   h('li','西瓜'),
+//   h('li','螃蟹🦀')
+// ])
+
+// // console.log(myVnode)
+
+// patch(container,myVode2)
 
 
 // const vnode = h("div#container.two.classes", { on: { click: () => {} } }, [
