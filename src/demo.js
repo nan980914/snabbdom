@@ -30,16 +30,11 @@ console.log(vnode1)
 
 patch(container,vnode1)
 
-// const vnode2 = h('ul',{},[
-//   h('li',{key:'a'},'a'),
-//   h('li',{key:'b'},'bb'),
-//   h('li',{key:'c'},'c'),
-//   h('li',{key:'d'},'d')
-// ])
-// let btn = document.getElementById("btn")
-// btn.onclick = function() {
-//   patch(vnode1,vnode2)
-// }
+const vnode2 = h('ul',{})
+let btn = document.getElementById("btn")
+btn.onclick = function() {
+  patch(vnode1,vnode2)
+}
 
 
 // 创建虚拟节点
