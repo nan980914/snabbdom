@@ -17,10 +17,9 @@ export default function (oldVnode, newVnode) {
   }
   // 判断oldVnode和newVnode是不是同一个节点
   if (oldVnode.key === newVnode.key && oldVnode.sel === newVnode.sel) {
-    // 精细化比较
-    patchVnode(newVnode, oldVnode);
+    // 精细化比较，对比同一个虚拟节点
+    patchVnode(oldVnode, newVnode);
   } else {
-    console.log("暴力插入新的，再删除旧的。");
     let newVnodeDom = createElement(newVnode, oldVnode.elm);
     // 插入到老节点之前
     oldVnode.elm.parentNode.insertBefore(newVnodeDom, oldVnode.elm);
